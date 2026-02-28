@@ -1,0 +1,16 @@
+{
+  "name": "apex-nhrc-uk",
+  "version": "1.0.0",
+  "description": "North Hampshire Repair Cafe Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve public -l 3000",
+    "start": "npx serve public -l 3000"
+  },
+  "keywords": ["repair", "cafe", "community", "north-hants"],
+  "author": "Dom Rodriguez and Simon Boase",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}
