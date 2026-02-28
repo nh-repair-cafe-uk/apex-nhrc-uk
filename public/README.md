@@ -1,1 +1,0 @@
-## SIMON -- Put index.html code and assets in this folder!
