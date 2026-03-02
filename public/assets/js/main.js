@@ -7,6 +7,9 @@
 (function() {
   "use strict";
 
+  // Initialize PureCounter
+  new PureCounter();
+
   /**
    * Easy selector helper function
    */
