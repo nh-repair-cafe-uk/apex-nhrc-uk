@@ -1,0 +1,22 @@
+id: main
+heroTitle: "North Hampshire Repair Café"
+heroSubtitle: "A team of talented repairers repairing & recycling as much as we can"
+scrollBannerText: "Rotherwick Feb 28 10-13"
+scrollBannerHref: "#next-event"
+nextEventDescription: "Our usual end of the month Saturday event"
+nextEventLocation: "Rotherwick Village Hall"
+nextEventLocationHref: "#features"
+nextEventWhen: "Saturday February 28th, 10:30am-1pm. Pre-booking 10:00am entry, last visitors 12:30"
+nextEventBookingUrl: "https://ti.to/nh-repair-cafe/rotherwick282"
+stats:
+  happyClients: 1963
+  savingsGbp: 89814
+  ghgKg: 16640
+  landfillKg: 2590
+contactEmail: info@nhrc.uk
+facebookUrl: "https://www.facebook.com/North-Hampshire-Repair-Cafe-112080698146905"
+instagramUrl: "https://instagram.com/nhrc.uk"
+paypalHostedButtonId: JB878XJDL68LS
+statcounterProject: 12753477
+statcounterSecurity: 6ce90cbc
+gtagId: G-YJ0QM38Y1C
