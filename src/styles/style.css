@@ -66,6 +66,27 @@ rc {
   font-family: "butterfly kids", cursive;
 }
 
+/* Visible keyboard focus everywhere a mouse-only :hover exists */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--rust);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -458,21 +479,24 @@ rc {
   font-size: 32px;
 }
 #hero .btn-get-started {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: 0.03em;
   font-size: 14px;
   display: inline-block;
-  padding: 10px 35px 10px 35px;
-  border-radius: 4px;
-  transition: 0.5s;
+  padding: 12px 32px;
+  border-radius: 2px;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.2s, box-shadow 0.2s;
   color: #fff;
   background: var(--rust);
-  border: 2px solid var(--rust);
+  border: 2px solid var(--ink);
 }
 #hero .btn-get-started:hover {
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+  color: #fff;
 }
 #hero .btn-watch-video {
   font-size: 16px;
@@ -601,21 +625,24 @@ section {
   color: #fff;
 }
 #next-event .btn-get-started {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: 0.03em;
   font-size: 14px;
   display: inline-block;
-  padding: 10px 35px 10px 35px;
-  border-radius: 4px;
-  transition: 0.5s;
+  padding: 12px 32px;
+  border-radius: 2px;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.2s, box-shadow 0.2s;
   color: #fff;
   background: var(--rust);
-  border: 2px solid var(--rust);
+  border: 2px solid var(--ink);
 }
 #next-event .btn-get-started:hover {
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+  color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -1416,15 +1443,21 @@ section {
   padding: 12px 15px;
 }
 .contact .php-email-form button[type=submit] {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.03em;
   background: var(--rust);
-  border: 0;
+  border: 2px solid var(--ink);
   padding: 10px 24px;
   color: #fff;
-  transition: 0.4s;
-  border-radius: 4px;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 2px;
 }
 .contact .php-email-form button[type=submit]:hover {
-  background: var(--rust-600);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
 }
 @-webkit-keyframes animate-loading {
   0% {
