@@ -1,33 +1,55 @@
 [build]
-  # No build command needed for static site
-  publish = "public"
-
-  # Skip unnecessary build steps
-  command = "echo 'No build step required for static site'"
+  publish = "dist"
+  command = "npm run build"
 
 [build.environment]
-  # Node version for any scripts
-  NODE_VERSION = "18"
+  NODE_VERSION = "22"
 
-# Redirect rules
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
-  conditions = {Role = ["admin"]}
-
-# Headers for security and performance
+# Site-wide security headers. The admin CMS gets its own, more permissive
+# policy further down since Decap CMS needs 'unsafe-eval' (its bundled
+# YAML/TOML/hashing deps use eval-based dynamic requires) and needs to
+# reach GitHub + Decap Bridge.
 [[headers]]
   for = "/*"
   [headers.values]
-    # Security headers
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
-    X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = """\
+      default-src 'self'; \
+      script-src 'self' https://www.googletagmanager.com https://www.statcounter.com; \
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; \
+      font-src 'self' https://fonts.gstatic.com; \
+      img-src 'self' data: https://www.paypalobjects.com https://www.paypal.com https://c.statcounter.com; \
+      connect-src 'self' https://www.statcounter.com; \
+      form-action 'self' https://www.paypal.com; \
+      frame-ancestors 'none'; \
+      object-src 'none'; \
+      base-uri 'self';\
+      """
 
-    # Performance - Cache static assets
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Content-Security-Policy = """\
+      default-src 'self'; \
+      script-src 'self' 'unsafe-eval'; \
+      style-src 'self' 'unsafe-inline'; \
+      font-src 'self' data:; \
+      img-src 'self' data: blob: https:; \
+      connect-src 'self' https://api.github.com https://github.com https://*.decapbridge.com https://raw.githubusercontent.com; \
+      form-action 'self'; \
+      frame-ancestors 'none'; \
+      object-src 'none'; \
+      base-uri 'self';\
+      """
+
+# Long-lived caching for hashed build assets; HTML and the CMS config
+# should always be revalidated.
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
@@ -36,18 +58,6 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
-  for = "/*.css"
+  for = "/admin/config.yml"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-    Content-Type = "text/css; charset=utf-8"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-    Content-Type = "application/javascript; charset=utf-8"
-
-[[headers]]
-  for = "/assets/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=0, must-revalidate"

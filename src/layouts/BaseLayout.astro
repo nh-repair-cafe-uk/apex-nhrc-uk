@@ -47,16 +47,13 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/assets/img/repaircafe-frontv7blue.jpg" />
-
-    <script
-      is:inline
-      define:vars={{ gtagId, statcounterProject, statcounterSecurity }}
-    >
-      window.__nhrcAnalytics = { gtagId, statcounterProject, statcounterSecurity };
-    </script>
   </head>
 
-  <body>
+  <body
+    data-gtag-id={gtagId}
+    data-statcounter-project={statcounterProject}
+    data-statcounter-security={statcounterSecurity}
+  >
     <slot />
 
     <div id="preloader"></div>

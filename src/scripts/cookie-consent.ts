@@ -4,22 +4,17 @@ const STORAGE_KEY = 'nhrc-cookie-consent';
 
 declare global {
   interface Window {
-    __nhrcAnalytics?: {
-      gtagId: string;
-      statcounterProject: number;
-      statcounterSecurity: string;
-    };
     dataLayer: unknown[];
   }
 }
 
 function loadAnalytics() {
-  const config = window.__nhrcAnalytics;
-  if (!config) return;
+  const { gtagId, statcounterProject, statcounterSecurity } = document.body.dataset;
+  if (!gtagId || !statcounterProject || !statcounterSecurity) return;
 
   const gtagScript = document.createElement('script');
   gtagScript.async = true;
-  gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${config.gtagId}`;
+  gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${gtagId}`;
   document.head.appendChild(gtagScript);
 
   window.dataLayer = window.dataLayer || [];
@@ -27,16 +22,16 @@ function loadAnalytics() {
     window.dataLayer.push(args);
   }
   gtag('js', new Date());
-  gtag('config', config.gtagId);
+  gtag('config', gtagId);
 
   const scWindow = window as typeof window & {
-    sc_project?: number;
+    sc_project?: string;
     sc_invisible?: number;
     sc_security?: string;
   };
-  scWindow.sc_project = config.statcounterProject;
+  scWindow.sc_project = statcounterProject;
   scWindow.sc_invisible = 1;
-  scWindow.sc_security = config.statcounterSecurity;
+  scWindow.sc_security = statcounterSecurity;
   const statcounterScript = document.createElement('script');
   statcounterScript.async = true;
   statcounterScript.src = 'https://www.statcounter.com/counter/counter.js';

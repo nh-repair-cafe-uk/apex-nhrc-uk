@@ -1,0 +1,172 @@
+# Decap CMS configuration for the North Hampshire Repair Café site.
+#
+# Auth is handled by Decap Bridge (https://decapbridge.com). After
+# registering this repo as a "Site" in the Decap Bridge dashboard, replace
+# YOUR-SITE-ID below with the identity_url path Decap Bridge generates for
+# you (Site settings -> config.yml snippet).
+backend:
+  name: git-gateway
+  repo: nh-repair-cafe-uk/apex-nhrc-uk
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/YOUR-SITE-ID
+  gateway_url: https://gateway.decapbridge.com
+
+publish_mode: simple
+media_folder: public/assets/img/uploads
+public_folder: /assets/img/uploads
+
+locale: en
+
+collections:
+  - name: site-settings
+    label: Site Settings
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: main
+        label: Main Settings
+        file: src/content/settings/site.yml
+        fields:
+          - { name: heroTitle, label: Hero Title, widget: string }
+          - { name: heroSubtitle, label: Hero Subtitle, widget: string }
+          - { name: scrollBannerText, label: Scrolling Banner Text, widget: string }
+          - { name: scrollBannerHref, label: Scrolling Banner Link, widget: string, hint: "Usually #next-event" }
+          - { name: nextEventDescription, label: Next Event Blurb, widget: text }
+          - name: stats
+            label: About Section Stats
+            widget: object
+            fields:
+              - { name: happyClients, label: Happy Clients, widget: number, value_type: int }
+              - { name: savingsGbp, label: Replacement Costs Saved (GBP), widget: number, value_type: int }
+              - { name: ghgKg, label: Kg of Greenhouse Gases, widget: number, value_type: int }
+              - { name: landfillKg, label: Kg Landfill Avoided, widget: number, value_type: int }
+          - { name: contactEmail, label: Contact Email, widget: string }
+          - { name: facebookUrl, label: Facebook URL, widget: string }
+          - { name: instagramUrl, label: Instagram URL, widget: string }
+          - { name: paypalHostedButtonId, label: PayPal Hosted Button ID, widget: string }
+          - { name: statcounterProject, label: Statcounter Project ID, widget: number, value_type: int }
+          - { name: statcounterSecurity, label: Statcounter Security Code, widget: string }
+          - { name: gtagId, label: Google Analytics (gtag) ID, widget: string }
+
+  - name: upcoming-events
+    label: Upcoming Events
+    folder: src/content/upcoming-events
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.location}}"
+    fields:
+      - { name: date, label: Date, widget: date, format: "YYYY-MM-DD" }
+      - { name: location, label: Location Name, widget: string }
+      - { name: time, label: Time, widget: string, hint: "e.g. 10:00 to 13:00" }
+      - { name: bookingUrl, label: Booking URL, widget: string, required: false }
+      - { name: order, label: Sort Order, widget: number, value_type: int, default: 0 }
+
+  - name: past-events
+    label: Past Events Archive
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: archive
+        label: Archive
+        file: src/content/past-events.yml
+        fields:
+          - name: events
+            label: Past Events
+            widget: list
+            field: { name: description, label: Event, widget: string }
+
+  - name: locations
+    label: Locations
+    folder: src/content/locations
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: tabId, label: Tab ID, widget: string, hint: "Unique, e.g. tab-7. Do not change once published." }
+      - { name: navLabel, label: Navigation Label, widget: string }
+      - { name: mapImage, label: Map Image, widget: image, media_folder: "/public/assets/img", public_folder: "/assets/img" }
+      - { name: mapHref, label: Map Link, widget: string }
+      - { name: outsideImage, label: Outside Photo, widget: image, media_folder: "/public/assets/img", public_folder: "/assets/img" }
+      - name: features
+        label: Features
+        widget: list
+        field: { name: feature, label: Feature, widget: string }
+      - { name: order, label: Sort Order, widget: number, value_type: int, default: 0 }
+      - { name: active, label: Currently in rotation, widget: boolean, default: true }
+      - { name: body, label: Description, widget: markdown, required: false }
+
+  - name: services
+    label: Services
+    folder: src/content/services
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: icon, label: Icon class, widget: string, hint: "Boxicons/Remixicon/Bootstrap Icons class, e.g. bx bx-laptop" }
+      - { name: description, label: Description, widget: text }
+      - { name: order, label: Sort Order, widget: number, value_type: int, default: 0 }
+
+  - name: supporters
+    label: Supporters
+    folder: src/content/supporters
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: logo, label: Logo, widget: image, media_folder: "/public/assets/img/clients", public_folder: "/assets/img/clients" }
+      - { name: href, label: Website URL, widget: string, required: false }
+      - { name: order, label: Sort Order, widget: number, value_type: int, default: 0 }
+
+  - name: testimonials
+    label: Testimonials
+    folder: src/content/testimonials
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: author, label: Author, widget: string, required: false }
+      - { name: quote, label: Quote, widget: text }
+      - { name: order, label: Sort Order, widget: number, value_type: int, default: 0 }
+
+  - name: team
+    label: Team
+    folder: src/content/team
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: role, label: Role / Specialism, widget: string }
+      - { name: image, label: Photo, widget: image, media_folder: "/public/assets/img/team", public_folder: "/assets/img/team" }
+      - { name: order, label: Sort Order, widget: number, value_type: int, default: 0 }
+
+  - name: portfolio
+    label: Portfolio Gallery
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: gallery
+        label: Gallery
+        file: src/content/portfolio.yml
+        fields:
+          - name: items
+            label: Photos
+            widget: list
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: caption, label: Caption, widget: string, required: false }
+              - { name: image, label: Image, widget: image, media_folder: "/public/assets/img/portfolio", public_folder: "/assets/img/portfolio" }
+              - name: categories
+                label: Categories
+                widget: select
+                multiple: true
+                options:
+                  - { label: Odiham, value: event }
+                  - { label: Hartley Wintney, value: hw }
+                  - { label: Sherfield, value: s }
+                  - { label: Sherfield Park, value: sherfield-park }
+                  - { label: Silchester, value: sil }
+                  - { label: Electricals, value: app }
+                  - { label: Fabrics, value: fabric }
+                  - { label: Other, value: web }
+                  - { label: Video, value: video }

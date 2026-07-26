@@ -1,0 +1,25 @@
+---
+// Decap CMS admin. The bundle is imported from the npm package (rather
+// than a third-party CDN script) so it's self-hosted and covered by our
+// own CSP. Config lives at /admin/config.yml (a static public/ file) so
+// Decap Bridge and Decap CMS's default "look next to index.html" logic
+// both find it without extra configuration.
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Content Manager | North Hampshire Repair Café</title>
+    <link href="/assets/img/favicon.png" rel="icon" />
+  </head>
+  <body>
+    <script>
+      import CMS from 'decap-cms-app';
+
+      CMS.init();
+    </script>
+  </body>
+</html>
