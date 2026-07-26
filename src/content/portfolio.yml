@@ -2,7 +2,7 @@ gallery:
   items:
     - title: Team with Mayor
       caption: Mayor visits team following the £50K customer savings milestone
-      image: /assets/img/portfolio/sherfield-photos/apr24/mayor-team.JPG
+      image: /assets/img/portfolio/sherfield-photos/apr24/mayor-team.webp
       categories: [s]
     - title: Cake for £50K milestone
       caption: Right tool for the job
@@ -10,31 +10,35 @@ gallery:
       categories: [s]
     - title: Chair
       caption: New stretchers
-      image: /assets/img/portfolio/sherfield-photos/jan24/chair.jpg
+      image: /assets/img/portfolio/sherfield-photos/jan24/chair.webp
       categories: [s]
     - title: Busy
       caption: Busy day in Sherfield
-      image: /assets/img/portfolio/sherfield-photos/jan24/busy.jpg
+      image: /assets/img/portfolio/sherfield-photos/jan24/busy.webp
       categories: [s]
     - title: Clock
       caption: ""
-      image: /assets/img/portfolio/sherfield-photos/jan24/clock.jpg
+      image: /assets/img/portfolio/sherfield-photos/jan24/clock.webp
       categories: [s, web]
     - title: Bench
       caption: Renewed slats
-      image: /assets/img/portfolio/odiham-photos/bench.jpeg
+      image: /assets/img/portfolio/odiham-photos/bench.webp
       categories: [web]
     - title: Dancing Cactus
       caption: Why?
-      image: /assets/img/portfolio/odiham-photos/cactus.jpeg
+      image: /assets/img/portfolio/odiham-photos/cactus.webp
+      categories: [web]
+    - title: Clock
+      caption: Overwound?
+      image: /assets/img/portfolio/odiham-photos/clock.jpg
       categories: [web]
     - title: Kettle
       caption: Testing the electrics
-      image: /assets/img/portfolio/odiham-photos/kettle.jpg
+      image: /assets/img/portfolio/odiham-photos/kettle.webp
       categories: [app]
     - title: Lamp
       caption: Lamp repair
-      image: /assets/img/portfolio/odiham-photos/light.jpeg
+      image: /assets/img/portfolio/odiham-photos/light.webp
       categories: [app]
     - title: Welcome
       caption: Welcome to the Odiham Repair Cafe
@@ -42,7 +46,7 @@ gallery:
       categories: [event]
     - title: Team
       caption: Team outside Odiham library
-      image: /assets/img/team2.jpg
+      image: /assets/img/portfolio/odiham-photos/team.webp
       categories: [event]
     - title: Axe
       caption: Fixing an axe handle
@@ -160,6 +164,10 @@ gallery:
       caption: Fitting new hall effect switch
       image: /assets/img/portfolio/silchester/andrew-lighting.jpg
       categories: [sil, web]
+    - title: Busy in Silchester
+      caption: Everyone hard at it
+      image: /assets/img/portfolio/silchester/busy.jpg
+      categories: [sil, web]
     - title: Deputy Mayor Visiting
       caption: Deputy Mayor and Mayoress
       image: /assets/img/portfolio/silchester/deputy-mayor.jpg
@@ -186,9 +194,9 @@ gallery:
       categories: [hw, app]
     - title: Pinball
       caption: Pinball game under investigation
-      image: /assets/img/portfolio/hw/pinball-wizard.jpeg
+      image: /assets/img/portfolio/hw/pinball-wizard.webp
       categories: [hw, app]
     - title: Team
       caption: Team at Hartley Wintney
-      image: /assets/img/portfolio/hw/team.jpeg
+      image: /assets/img/portfolio/hw/team.webp
       categories: [hw, app]

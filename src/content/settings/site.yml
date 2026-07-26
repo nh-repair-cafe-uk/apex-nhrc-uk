@@ -1,14 +1,14 @@
 main:
   heroTitle: "North Hampshire Repair Café"
   heroSubtitle: "A team of talented repairers repairing & recycling as much as we can"
-  scrollBannerText: "Rotherwick Feb 28 10-13"
+  scrollBannerText: "Hook August 29th 10-12:30"
   scrollBannerHref: "#next-event"
-  nextEventDescription: "Our usual end of the month Saturday event. Pre-booking 10:00am entry, last visitors 12:30."
+  nextEventDescription: "Our end of the month event on Saturday 29th August. Online booking closes the day before. You're still welcome to come along and book in on the day at 10:30. We have been getting busy so please be patient, sit back and enjoy the coffee."
   stats:
-    happyClients: 1963
-    savingsGbp: 89814
-    ghgKg: 16640
-    landfillKg: 2590
+    happyClients: 2399
+    savingsGbp: 111895
+    ghgKg: 19260
+    landfillKg: 2980
   contactEmail: info@nhrc.uk
   facebookUrl: "https://www.facebook.com/North-Hampshire-Repair-Cafe-112080698146905"
   instagramUrl: "https://instagram.com/nhrc.uk"

@@ -1,6 +1,6 @@
 ---
 name: Sheila
 role: Superb sewing
-image: /assets/img/team/sheila-nb1.png
+image: /assets/img/team/sheila-nb1.webp
 order: 5
 ---
