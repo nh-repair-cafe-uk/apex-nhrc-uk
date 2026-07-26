@@ -13,8 +13,10 @@ const { scrollBannerText, scrollBannerHref } = settings.data;
     </h1>
 
     <div id="scroll-container">
-      <div id="scroll-text">
-        <a href={scrollBannerHref} title="click here">{scrollBannerText}</a>
+      <div id="scroll-text" class="repair-tag">
+        <a href={scrollBannerHref} title="Jump to next event">
+          <span class="repair-tag__label">Next repair —</span> {scrollBannerText}
+        </a>
       </div>
     </div>
 

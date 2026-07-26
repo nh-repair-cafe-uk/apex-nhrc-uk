@@ -626,43 +626,50 @@ section {
   padding-bottom: 15px;
 }
 .about .count-box {
-  padding: 60px 0;
+  position: relative;
   width: 100%;
+  margin: 30px 0;
+  padding: 20px 20px 20px 34px;
+  background: var(--white);
+  border-radius: 2px 10px 10px 2px;
+  box-shadow: 3px 4px 0 var(--panel);
+}
+.about .count-box::before {
+  /* punched hole + grommet, tying the stat to the repair-tag motif */
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  margin-top: -4.5px;
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 0 0 2px var(--twine);
 }
 .about .count-box i {
   display: block;
-  font-size: 48px;
-  color: var(--teal-300);
-  float: left;
-  line-height: 0;
+  font-size: 28px;
+  color: var(--rust);
+  line-height: 1;
+  margin-bottom: 8px;
 }
 .about .count-box span {
-  font-size: 28px;
-  line-height: 25px;
+  font-family: var(--font-mono);
+  font-size: 32px;
+  line-height: 1;
   display: block;
   font-weight: 700;
-  color: var(--teal-700);
-  margin-left: 60px;
+  color: var(--ink);
 }
 .about .count-box p {
-  padding: 5px 0 0 0;
-  margin: 0 0 0 60px;
+  padding: 6px 0 0 0;
+  margin: 0;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
+  letter-spacing: 0.02em;
   color: var(--teal-700);
-}
-.about .count-box a {
-  font-weight: 600;
-  display: block;
-  margin-top: 20px;
-  color: var(--teal-700);
-  font-size: 15px;
-  font-family: var(--font-mono);
-  transition: ease-in-out 0.3s;
-}
-.about .count-box a:hover {
-  color: var(--teal-500);
 }
 .about .content {
   font-size: 15px;
@@ -1125,17 +1132,31 @@ section {
   bottom: -50px;
   z-index: 3;
   transition: all ease-in-out 0.3s;
-  background: var(--rust);
-  padding: 15px 20px;
+  background: var(--kraft);
+  padding: 14px 20px 14px 32px;
+  border-radius: 2px 10px 0 0;
+}
+.portfolio .portfolio-item .portfolio-info::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 0 0 2px var(--twine);
 }
 .portfolio .portfolio-item .portfolio-info h4 {
-  font-size: 18px;
-  color: #fff;
-  font-weight: 600;
+  font-size: 16px;
+  color: var(--ink);
+  font-weight: 700;
 }
 .portfolio .portfolio-item .portfolio-info p {
-  color: #fff;
-  font-size: 14px;
+  color: var(--teal-900);
+  font-family: var(--font-mono);
+  font-size: 13px;
   margin-bottom: 0;
 }
 .portfolio .portfolio-item .portfolio-info .preview-link, .portfolio .portfolio-item .portfolio-info .details-link {
@@ -1143,11 +1164,11 @@ section {
   right: 50px;
   font-size: 24px;
   top: calc(50% - 18px);
-  color: white;
+  color: var(--ink);
   transition: ease-in-out 0.3s;
 }
 .portfolio .portfolio-item .portfolio-info .preview-link:hover, .portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: var(--rust-100);
+  color: var(--rust);
 }
 .portfolio .portfolio-item .portfolio-info .details-link {
   right: 15px;
@@ -1258,14 +1279,36 @@ section {
   display: block;
   width: 50px;
   height: 1px;
-  background: var(--teal-300);
+  background: var(--rust);
   bottom: 0;
   left: 0;
 }
 .team .member span {
-  font-style: italic;
-  display: block;
-  font-size: 13px;
+  display: inline-block;
+  margin-top: 4px;
+  padding: 3px 10px 3px 16px;
+  background: var(--kraft);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 1px 6px 6px 1px;
+  position: relative;
+}
+.team .member span::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  margin-top: -2px;
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 0 0 1px var(--twine);
 }
 .team .member .social {
   position: absolute;
@@ -1583,71 +1626,60 @@ section {
   
 }
 
-/* hide scrolling text on small devices */
-@media screen and (max-width: 600px) {
-  #scroll-text {
-    visibility: hidden;
-    clear: both;
-    float: left;
-    margin: 10px auto 5px 20px;
-    overflow: hidden;
-    /* width: 28%; */
-    display: none;
-  }
+/*--------------------------------------------------------------
+# Repair tag (signature element)
+# A kraft/manila swing-tag, like the one tied to anything dropped
+# off for repair. Reused for the next-event badge, stat counters,
+# team specialisms and portfolio captions.
+--------------------------------------------------------------*/
+.repair-tag {
+  --tag-rotate: -3deg;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--kraft);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 8px 16px 8px 28px;
+  border-radius: 2px 10px 10px 2px;
+  box-shadow: 2px 3px 0 rgba(22, 35, 44, 0.25);
+  transform: rotate(var(--tag-rotate));
+}
+.repair-tag::before {
+  /* punched hole + grommet */
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 0 0 2px var(--twine);
+}
+.repair-tag__label {
+  font-size: 11px;
+  opacity: 0.75;
+}
+.repair-tag a {
+  color: inherit;
 }
 
 #scroll-container {
-    width: 260px;
+  margin: 0 16px;
 }
-
-
-@media screen and (min-width: 768px) {
-    #scroll-container {
-        clear: both;
-        display: block;
-        float: left;
-        margin: 10px auto 5px 20px;
-        border: none;
-        /* border-radius: 5px; */
-        overflow: hidden;
-    }
-}
-
 #scroll-text {
-  color: orange;
-  background-color: white;
-  /* animation properties */
-  -moz-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
-  
-  -moz-animation: my-animation 15s linear infinite;
-  -webkit-animation: my-animation 15s linear infinite;
-  animation: my-animation 15s linear infinite;
+  font-size: 13px;
+  padding: 6px 14px 6px 26px;
 }
-
-/* for Firefox */
-@-moz-keyframes my-animation {
-  from { -moz-transform: translateX(100%); }
-  to { -moz-transform: translateX(-100%); }
-}
-
-/* for Chrome */
-@-webkit-keyframes my-animation {
-  from { -webkit-transform: translateX(100%); }
-  to { -webkit-transform: translateX(-100%); }
-}
-
-@keyframes my-animation {
-  from {
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-  }
-  to {
-    -moz-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
+@media (max-width: 991px) {
+  #scroll-container {
+    display: none;
   }
 }
 
