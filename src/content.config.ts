@@ -33,9 +33,6 @@ const portfolio = defineCollection({
         title: z.string(),
         caption: z.string().default(''),
         image: z.string(),
-        categories: z.array(
-          z.enum(['event', 'hw', 's', 'sherfield-park', 'sil', 'app', 'fabric', 'web', 'video'])
-        ),
       })
     ),
   }),
@@ -87,10 +84,12 @@ const upcomingEvents = defineCollection({
   }),
 });
 
-const pastEvents = defineCollection({
-  loader: file('./src/content/past-events.yml'),
+const houseRules = defineCollection({
+  loader: file('./src/content/house-rules.yml'),
   schema: z.object({
-    events: z.array(z.string()),
+    intro: z.string(),
+    rules: z.array(z.string()),
+    pdfUrl: z.string(),
   }),
 });
 
@@ -126,6 +125,6 @@ export const collections = {
   services,
   supporters,
   'upcoming-events': upcomingEvents,
-  'past-events': pastEvents,
+  'house-rules': houseRules,
   'site-settings': siteSettings,
 };

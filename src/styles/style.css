@@ -106,14 +106,6 @@ rc {
   }
 }
 /*--------------------------------------------------------------
-# Disable aos animation delay on mobile devices
---------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
-  [data-aos-delay] {
-    transition-delay: 0 !important;
-  }
-}
-/*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 #header {
@@ -421,7 +413,7 @@ rc {
   margin-bottom: 50px;
   font-size: 32px;
 }
-#hero .btn-get-started {
+.btn-get-started {
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
@@ -434,9 +426,10 @@ rc {
   background: #ff4a17;
   border: 2px solid #ff4a17;
 }
-#hero .btn-get-started:hover {
+.btn-get-started:hover {
   border-color: #fff;
   background: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 #hero .btn-watch-video {
   font-size: 16px;
@@ -484,8 +477,7 @@ section {
 }
 
 .section-bg {
-  /*background-color: #f0f4f8;*/
-  background-color: eff7f3;
+  background-color: #eff7f3;
 }
 
 .section-title {
@@ -523,23 +515,15 @@ section {
 # Next Event
 --------------------------------------------------------------*/
 #next-event {
-  background: url("/assets/img/about-bg.jpg");
-  background: rgba(188, 200, 178, 0.85);
-  background-size: cover;
+  background: #15222b;
   overflow: hidden;
   position: relative;
   color: #fff;
   padding: 60px 0 40px 0;
 }
-@media (min-width: 1024px) {
-  #next-event {
-    background-attachment: fixed;
-  }
-}
 #next-event:before {
   content: "";
-  background: rgba(13, 20, 41, 0.8);
-  background: rgba(188, 200, 178, 0.85);
+  background: rgba(13, 20, 41, 0.35);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -564,24 +548,6 @@ section {
   margin-bottom: 20px;
   color: #fff;
 }
-#next-event .btn-get-started {
-  font-family: "Open Sans", sans-serif;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 14px;
-  display: inline-block;
-  padding: 10px 35px 10px 35px;
-  border-radius: 4px;
-  transition: 0.5s;
-  color: #fff;
-  background: #ff4a17;
-  border: 2px solid #ff4a17;
-}
-#next-event .btn-get-started:hover {
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.1);
-}
-
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
@@ -915,6 +881,26 @@ section {
 }
 
 /*--------------------------------------------------------------
+# House Rules
+--------------------------------------------------------------*/
+.house-rules ol {
+  padding-left: 20px;
+}
+.house-rules ol li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.house-rules .btn-get-started {
+  display: inline-block;
+  margin-top: 10px;
+}
+.house-rules .btn-get-started:hover {
+  border-color: #ff4a17;
+  background: transparent;
+  color: #ff4a17;
+}
+
+/*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
 .services {
@@ -1017,61 +1003,17 @@ section {
   position: relative;
   top: 10px;
 }
+.testimonials .testimonial-item {
+  padding: 0 15px 40px;
+}
 .testimonials .testimonial-item p {
   font-style: italic;
   margin: 0 auto 15px auto;
   color: #eee;
 }
-@media (min-width: 992px) {
-  .testimonials .testimonial-item p {
-    width: 80%;
-  }
-}
-.testimonials .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-.testimonials .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #a1bdd1;
-  opacity: 0.5;
-}
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #ff4a17;
-  opacity: 1;
-}
-
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
-.portfolio #portfolio-flters {
-  padding: 0;
-  margin: 0 auto 25px auto;
-  list-style: none;
-  text-align: center;
-  border-radius: 50px;
-}
-.portfolio #portfolio-flters li {
-  cursor: pointer;
-  display: inline-block;
-  padding: 8px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-  color: #444444;
-  margin: 0 3px 10px 3px;
-  transition: all ease-in-out 0.3s;
-  background: #e5edf3;
-  border-radius: 4px;
-}
-.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-  color: #fff;
-  background: #ff4a17;
-}
-.portfolio #portfolio-flters li:last-child {
-  margin-right: 0;
-}
 .portfolio .portfolio-item {
   margin-bottom: 30px;
   overflow: hidden;

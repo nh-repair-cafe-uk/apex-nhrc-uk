@@ -1,0 +1,28 @@
+---
+import { getEntry } from 'astro:content';
+
+const houseRules = await getEntry('house-rules', 'main');
+if (!houseRules) throw new Error('house-rules/main entry is missing');
+const { intro, rules, pdfUrl } = houseRules.data;
+---
+
+<section id="house-rules" class="house-rules section-bg">
+  <div class="container">
+    <div class="section-title">
+      <h2>House Rules</h2>
+      <p>Please read before your visit</p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8">
+        <p class="fst-italic">{intro}</p>
+        <ol>
+          {rules.map((rule) => <li>{rule}</li>)}
+        </ol>
+        <a href={pdfUrl} target="_blank" rel="noopener noreferrer" class="btn-get-started">
+          Download the full disclaimer (PDF)
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

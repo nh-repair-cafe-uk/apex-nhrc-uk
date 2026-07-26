@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry, render } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 const locations = (await getCollection('locations'))
   .filter((location) => location.data.active)
@@ -13,14 +13,11 @@ const events = (await getCollection('upcoming-events')).sort(
   (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
 );
 
-const pastEvents = await getEntry('past-events', 'archive');
-if (!pastEvents) throw new Error('past-events/archive entry is missing');
-
 const dateFormatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long' });
 ---
 
 <section id="features" class="features">
-  <div class="container" data-aos="fade-up">
+  <div class="container">
     <div class="section-title">
       <h2>Locations and Events</h2>
       <p>Where to find our events</p>
@@ -50,11 +47,9 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 
         <div class="row">
           <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
             <h3>Events</h3>
-            <p>What's happening next. It's the last Saturday of the month.</p>
             <p class="fst-italic">
-              Click a location to see more then book your repair. Bookings open a month before the
-              event. Sessions start at 10:00 if you have pre-booked and 10:30 if you haven't. Last
-              items accepted at 12:30 in preparation for closing at 13:00.
+              Last Saturday of the month. Book online up to a month ahead, or just turn up —
+              10:00 for pre-booked, 10:30 on the day, last items in by 12:30.
             </p>
 
             <ul>
@@ -75,13 +70,6 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 
                 ))
               }
             </ul>
-
-            <details class="past-events">
-              <summary>Older events</summary>
-              <ul>
-                {pastEvents.data.events.map((entry) => <li><del>{entry}</del></li>)}
-              </ul>
-            </details>
           </div>
         </div>
       </div>

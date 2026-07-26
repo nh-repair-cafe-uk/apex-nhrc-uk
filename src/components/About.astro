@@ -7,100 +7,53 @@ const { stats } = settings.data;
 ---
 
 <section id="about" class="about">
-  <div class="container" data-aos="fade-up">
+  <div class="container">
     <div class="section-title">
       <h2>About</h2>
-      <p style="font-family: 'Allerta Stencil', sans-serif;">About <span>Repair Café</span></p>
-    </div>
-    <div class="row justify-content-end">
-      <div class="col-lg-11">
-        <div class="row justify-content-end">
-          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end={stats.happyClients} data-purecounter-duration="1" class="purecounter"></span>
-              <p>Happy Clients</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-currency-pound"></i>
-              <span data-purecounter-start="0" data-purecounter-end={stats.savingsGbp} data-purecounter-duration="1" class="purecounter"></span>
-              <p>Replacement costs saved</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-graph-down"></i>
-              <span data-purecounter-start="0" data-purecounter-end={stats.ghgKg} data-purecounter-duration="1" class="purecounter"></span>
-              <p>Kg of Greenhouse Gases</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-recycle"></i>
-              <span data-purecounter-start="0" data-purecounter-end={stats.landfillKg} data-purecounter-duration="1" class="purecounter"></span>
-              <p>Kg landfill avoided</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p style="font-family: 'Allerta Stencil', sans-serif;">What is a <span>Repair Café?</span></p>
     </div>
 
     <div class="row">
-      <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
-        <img
-          src="/assets/img/how-repair-cafe-works.jpg"
-          width="80%"
-          height="auto"
-          class="img-fluid"
-          alt="How Repair Cafe Works"
-          loading="lazy"
-        />
-        <a
-          href="https://www.youtube.com/watch?v=5zY_iv1_z4c"
-          class="play-btn mb-4"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Repair Cafe Video"
-        ></a>
+      <div class="col-lg-8">
+        <p>
+          A Repair Café is a free, volunteer-run event where you bring in broken things —
+          electricals, clothes, furniture, toys, whatever's given up — and fix them together with
+          someone who knows how, instead of throwing them away. You leave with a working repair
+          and a new skill, and less goes to landfill.
+        </p>
+        <p class="fst-italic">
+          <i class="bx bx-recycle" aria-hidden="true" style="color:green"></i> Repair
+          <i class="bx bx-recycle" aria-hidden="true" style="color:orange"></i> Reuse
+          <i class="bx bxs-heart" aria-hidden="true" style="color:red"></i> Relove
+        </p>
+        <p>
+          It's free to bring something in, but donations are always welcome — they cover our
+          tools and running costs.
+          <a
+            href="https://www.youtube.com/watch?v=5zY_iv1_z4c"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Watch how it works</a>.
+        </p>
       </div>
 
-      <div class="col-lg-6 pt-3 pt-lg-0 content">
-        <h3>What is <span style="font-family: 'Allerta Stencil', sans-serif;">Repair Café?</span></h3>
-        <p class="fst-italic">
-          We throw away vast amounts of stuff. Even things with almost nothing wrong, which could
-          get a new lease on life after a simple repair. The trouble is, lots of people have
-          forgotten that they can repair things themselves or they no longer know how. Knowing how
-          to make repairs is a skill quickly lost. Repair Café changes all that! People who might
-          otherwise be sidelined are getting involved again. Valuable practical knowledge is
-          getting passed on. Things are being used for longer and don't have to be thrown away.
-          This reduces the volume of raw materials and energy needed to make new products. It cuts
-          CO2 emissions, for example, because manufacturing new products causes CO2 to be
-          released.
-        </p>
-        <h3>Change mindsets</h3>
-        <ul>
-          <li><i class="bx bx-check-double"></i> Recycle</li>
-          <li><i class="bx bx-check-double"></i> Reuse</li>
-          <li><i class="bx bx-check-double"></i> Relove</li>
-          <li><i class="bx bx-check-double"></i> Help Save the Planet</li>
-        </ul>
-        <p>
-          <span style="font-family: 'Allerta Stencil', sans-serif;"><strong>Repair Café</strong></span>
-          teaches people to see their possessions in a new light. And, once again, to appreciate
-          their value. Repair Café helps change people's mindset. This is essential to kindle
-          people's enthusiasm for a sustainable society. But most of all, Repair Café just wants
-          to show how much fun repairing things can be, and how easy it often is. Why don't you
-          give it a go?
-        </p>
-        <p>
-          <span style="font-family: 'Allerta Stencil', sans-serif;"><strong>Funding</strong></span><br />
-          We offer our repair service for free but ask for a donation to cover operating costs.
-        </p>
+      <div class="col-lg-4">
+        <div class="row">
+          <div class="col-6">
+            <div class="count-box">
+              <i class="bi bi-emoji-smile"></i>
+              <span>{stats.happyClients.toLocaleString()}</span>
+              <p>Happy clients</p>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="count-box">
+              <i class="bi bi-recycle"></i>
+              <span>{stats.landfillKg.toLocaleString()}kg</span>
+              <p>Landfill avoided</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

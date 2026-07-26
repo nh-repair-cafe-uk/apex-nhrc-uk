@@ -1,0 +1,19 @@
+main:
+  intro: >-
+    Repairs are done by volunteers, for free — donations are welcome. Before
+    you're seen, you'll need to agree to these house rules (the full,
+    signable version is in the PDF below).
+  rules:
+    - "All repairs are at your own risk. There's no charge, but donations are welcome to cover costs like tools and running the service. Dangerous tools are present — parents are responsible for their children (and animals) throughout the session."
+    - "You'll need to fill in a short registration form before any repair starts. Your details stay confidential, and you can opt in to hear about future events."
+    - "Stay with your repairer while the work is done — that's how you pick up the skills, and how items only get left behind if you've both agreed to it."
+    - "Neither NHRC nor the repairers are liable for accidental damage, loss, or injury arising from a repair, or from advice given and used later."
+    - "Bring any consumables your repair needs — leads, plugs, fuses, zips, and the like."
+    - "Repairs come with no guarantee. We can't promise a fixed item won't fail again."
+    - "Repairers can decline to repair a particular item."
+    - "If something can't be fixed, it's yours to take back home."
+    - "One item per person will be examined. If there's time, we may look at a second."
+    - "Once an item leaves the venue, NHRC takes no further responsibility for it — if a repair wasn't PAT tested on site, that's down to you to arrange."
+    - "Please follow any current health guidance, and don't attend if you're unwell."
+    - "Signing the form means you've read, understood, and accepted these rules."
+  pdfUrl: /assets/NHRCHouseRules.pdf

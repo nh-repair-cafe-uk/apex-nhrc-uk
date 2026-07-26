@@ -61,20 +61,22 @@ collections:
       - { name: bookingUrl, label: Booking URL, widget: string, required: false }
       - { name: order, label: Sort Order, widget: number, value_type: int, default: 0 }
 
-  - name: past-events
-    label: Past Events Archive
+  - name: house-rules
+    label: House Rules
     delete: false
     editor:
       preview: false
     files:
-      - name: archive
-        label: Archive
-        file: src/content/past-events.yml
+      - name: main
+        label: Main
+        file: src/content/house-rules.yml
         fields:
-          - name: events
-            label: Past Events
+          - { name: intro, label: Intro Line, widget: text }
+          - name: rules
+            label: Rules
             widget: list
-            field: { name: description, label: Event, widget: string }
+            field: { name: rule, label: Rule, widget: text }
+          - { name: pdfUrl, label: Full Disclaimer PDF, widget: file, media_folder: "/public/assets", public_folder: "/assets" }
 
   - name: locations
     label: Locations
@@ -156,17 +158,3 @@ collections:
               - { name: title, label: Title, widget: string }
               - { name: caption, label: Caption, widget: string, required: false }
               - { name: image, label: Image, widget: image, media_folder: "/public/assets/img/portfolio", public_folder: "/assets/img/portfolio" }
-              - name: categories
-                label: Categories
-                widget: select
-                multiple: true
-                options:
-                  - { label: Odiham, value: event }
-                  - { label: Hartley Wintney, value: hw }
-                  - { label: Sherfield, value: s }
-                  - { label: Sherfield Park, value: sherfield-park }
-                  - { label: Silchester, value: sil }
-                  - { label: Electricals, value: app }
-                  - { label: Fabrics, value: fabric }
-                  - { label: Other, value: web }
-                  - { label: Video, value: video }

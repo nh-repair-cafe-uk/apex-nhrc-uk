@@ -3,14 +3,14 @@ import { getEntry } from 'astro:content';
 
 const settings = await getEntry('site-settings', 'main');
 if (!settings) throw new Error('site-settings/main entry is missing');
-const { contactEmail, facebookUrl, instagramUrl } = settings.data;
+const { contactEmail, facebookUrl, instagramUrl, paypalHostedButtonId } = settings.data;
 ---
 
 <footer id="footer">
   <div class="footer-top">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-4 col-md-6">
           <div class="footer-info">
             <h3>North Hampshire Repair Café</h3>
             <p><strong>Email:</strong> {contactEmail}<br /></p>
@@ -25,27 +25,29 @@ const { contactEmail, facebookUrl, instagramUrl } = settings.data;
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-6 footer-links">
+        <div class="col-lg-3 col-md-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
             <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#about">About</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#features">Events</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="/assets/NHRCHouseRules.pdf" target="_blank" rel="noopener noreferrer">House Rules (Please Read)</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#house-rules">House Rules</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="/assets/privacy.pdf" target="_blank" rel="noopener noreferrer">Privacy policy</a></li>
           </ul>
         </div>
 
-        <div class="col-lg-4 col-md-6 footer-newsletter">
-          <p>Repair Cafe's around the area. Click for larger map</p>
-          <a
-            href="https://www.google.com/maps/d/edit?mid=1of11KA7FWJgDtv9Cpy-rzKaoqSsXGII&usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Larger map of local Repair Cafe's"
-          >
-            <img src="/assets/img/repaircafesnearby.jpg" loading="lazy" alt="Nearby repair cafe's" />
-          </a>
+        <div class="col-lg-5 col-md-6 footer-newsletter">
+          <p>We repair for free — donations help cover our costs.</p>
+          <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value={paypalHostedButtonId} />
+            <input
+              type="image"
+              src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif"
+              name="submit"
+              title="PayPal - The safer, easier way to pay online!"
+              alt="Donate with PayPal"
+            />
+          </form>
         </div>
       </div>
     </div>

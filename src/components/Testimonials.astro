@@ -5,29 +5,22 @@ const testimonials = (await getCollection('testimonials')).sort((a, b) => a.data
 ---
 
 <section id="testimonials" class="testimonials">
-  <div class="container" data-aos="zoom-in">
-    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-      <div class="swiper-wrapper">
-        {
-          testimonials.map((testimonial) => (
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <h3>{testimonial.data.author}</h3>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left" />
-                  {testimonial.data.quote}
-                  <i class="bx bxs-quote-alt-right quote-icon-right" />
-                </p>
-              </div>
+  <div class="container">
+    <div class="row">
+      {
+        testimonials.map((testimonial) => (
+          <div class="col-lg-4">
+            <div class="testimonial-item">
+              <h3>{testimonial.data.author}</h3>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left" />
+                {testimonial.data.quote}
+                <i class="bx bxs-quote-alt-right quote-icon-right" />
+              </p>
             </div>
-          ))
-        }
-      </div>
-      <div class="swiper-pagination" />
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
-
-<script>
-  import '../scripts/testimonial-slider';
-</script>

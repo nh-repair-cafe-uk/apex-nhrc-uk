@@ -5,13 +5,13 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
 ---
 
 <section id="services" class="services section-bg">
-  <div class="container" data-aos="fade-up">
+  <div class="container">
     <div class="section-title">
       <h2>Services</h2>
       <p>Our Services</p>
     </div>
 
-    <div class="row" data-aos="fade-up" data-aos-delay="200">
+    <div class="row">
       {
         services.map((service) => (
           <div class="col-md-6 mt-4 mt-md-0">

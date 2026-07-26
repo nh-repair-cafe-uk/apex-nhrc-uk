@@ -4,8 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'boxicons/css/boxicons.min.css';
 import 'remixicon/fonts/remixicon.css';
-import 'aos/dist/aos.css';
-import 'swiper/swiper-bundle.css';
 import { getEntry } from 'astro:content';
 
 const settings = await getEntry('site-settings', 'main');
@@ -65,8 +63,6 @@ const {
       import '../scripts/preloader';
       import '../scripts/nav';
       import '../scripts/back-to-top';
-      import '../scripts/aos-init';
-      import '../scripts/counters';
       import '../scripts/cookie-consent';
     </script>
   </body>
