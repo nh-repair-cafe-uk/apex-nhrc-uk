@@ -1,0 +1,38 @@
+<div class="cookie-consent" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p>
+    <strong>Do you like cookies?</strong> &#x1F36A; We use cookies for site analytics (Google
+    Analytics and Statcounter). They're only loaded if you agree.
+    <a href="https://cookiesandyou.com/" target="_blank" rel="noopener noreferrer">Learn more</a>
+  </p>
+  <div class="cookie-consent__actions">
+    <button type="button" class="btn btn-primary btn-sm cookie-consent__accept">I agree</button>
+    <button type="button" class="btn btn-outline-secondary btn-sm cookie-consent__decline">No thanks</button>
+  </div>
+</div>
+
+<style>
+  .cookie-consent {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1050;
+    background: #222;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    text-align: center;
+  }
+  .cookie-consent--visible {
+    display: block;
+  }
+  .cookie-consent a {
+    color: #ff9d75;
+  }
+  .cookie-consent__actions {
+    margin-top: 0.5rem;
+  }
+  .cookie-consent__actions button {
+    margin: 0 0.25rem;
+  }
+</style>

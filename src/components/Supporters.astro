@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+
+const supporters = (await getCollection('supporters')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<section id="clients" class="clients">
+  <div class="container" data-aos="zoom-in">
+    <div class="section-title">
+      <h2>Supporters</h2>
+      <p>Organisations helping us</p>
+    </div>
+
+    <div class="row">
+      {
+        supporters.map((supporter) => (
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            {supporter.data.href ? (
+              <a href={supporter.data.href} target="_blank" rel="noopener noreferrer" title={supporter.data.name}>
+                <img src={supporter.data.logo} class="img-fluid" alt={supporter.data.name} loading="lazy" />
+              </a>
+            ) : (
+              <img src={supporter.data.logo} class="img-fluid" alt={supporter.data.name} loading="lazy" />
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

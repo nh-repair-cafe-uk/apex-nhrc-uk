@@ -1,0 +1,33 @@
+---
+import { getEntry } from 'astro:content';
+
+const settings = await getEntry('site-settings', 'main');
+if (!settings) throw new Error('site-settings/main entry is missing');
+const { scrollBannerText, scrollBannerHref } = settings.data;
+---
+
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center justify-content-between">
+    <h1 class="logo">
+      <a href="/"><span style="font-family: 'Allerta Stencil', sans-serif">NORTH HANTS</span></a>
+    </h1>
+
+    <div id="scroll-container">
+      <div id="scroll-text">
+        <a href={scrollBannerHref} title="click here">{scrollBannerText}</a>
+      </div>
+    </div>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto" href="#about">About</a></li>
+        <li><a class="nav-link scrollto" href="#features">Events</a></li>
+        <li><a class="nav-link scrollto" href="#services">Services</a></li>
+        <li><a class="nav-link scrollto" href="#team">Team</a></li>
+        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        <li><a class="getstarted scrollto" href="#next-event">Book</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle" role="button" tabindex="0" aria-label="Toggle navigation"></i>
+    </nav>
+  </div>
+</header>

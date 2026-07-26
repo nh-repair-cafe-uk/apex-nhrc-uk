@@ -1,0 +1,126 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+
+const locations = (await getCollection('locations'))
+  .filter((location) => location.data.active)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const renderedLocations = await Promise.all(
+  locations.map(async (location) => ({ location, Content: (await render(location)).Content }))
+);
+
+const events = (await getCollection('upcoming-events')).sort(
+  (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
+);
+
+const pastEvents = await getEntry('past-events', 'archive');
+if (!pastEvents) throw new Error('past-events/archive entry is missing');
+
+const dateFormatter = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long' });
+---
+
+<section id="features" class="features">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Locations and Events</h2>
+      <p>Where to find our events</p>
+    </div>
+
+    <ul class="nav nav-tabs row d-flex">
+      <li class="nav-item col-2">
+        <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1" title="Event List">
+          <i class="ri-store-line"></i>
+          <h4 class="d-none d-lg-block">Events</h4>
+        </a>
+      </li>
+      {
+        locations.map((location) => (
+          <li class="nav-item col-2">
+            <a class="nav-link" data-bs-toggle="tab" href={`#${location.data.tabId}`} title={location.data.navLabel}>
+              <i class="ri-gps-line" />
+              <h4 class="d-none d-lg-block">{location.data.navLabel}</h4>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active show" id="tab-1">
+        <div class="row">
+          <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+            <h3>Events</h3>
+            <p>What's happening next. It's the last Saturday of the month.</p>
+            <p class="fst-italic">
+              Click a location to see more then book your repair. Bookings open a month before the
+              event. Sessions start at 10:00 if you have pre-booked and 10:30 if you haven't. Last
+              items accepted at 12:30 in preparation for closing at 13:00.
+            </p>
+
+            <ul>
+              {
+                events.map((event) => (
+                  <li>
+                    <i class="ri-check-double-line" />
+                    {event.data.bookingUrl ? (
+                      <a href={event.data.bookingUrl} target="_blank" rel="noopener noreferrer" title="Book">
+                        {dateFormatter.format(event.data.date)}, {event.data.location}, {event.data.time}
+                      </a>
+                    ) : (
+                      <>
+                        {dateFormatter.format(event.data.date)}, {event.data.location}, {event.data.time}
+                      </>
+                    )}
+                  </li>
+                ))
+              }
+            </ul>
+
+            <details class="past-events">
+              <summary>Older events</summary>
+              <ul>
+                {pastEvents.data.events.map((entry) => <li><del>{entry}</del></li>)}
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      {
+        renderedLocations.map(({ location, Content }) => (
+          <div class="tab-pane" id={location.data.tabId}>
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>{location.data.name}</h3>
+                <a href={location.data.mapHref} target="_blank" rel="noopener noreferrer" title="Click to see map and directions">
+                  <img src={location.data.mapImage} class="img-fluid" alt={`${location.data.name} map`} loading="lazy" />
+                </a>
+                <div class="fst-italic">
+                  <Content />
+                </div>
+                <ul>
+                  {location.data.features.map((feature) => (
+                    <li><i class="ri-check-double-line" /> {feature}</li>
+                  ))}
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src={location.data.outsideImage} alt={location.data.name} class="img-fluid" loading="lazy" />
+                <p>
+                  Outside view of the location. Directions available from{' '}
+                  <a href={location.data.mapHref} target="_blank" rel="noopener noreferrer">
+                    Google Maps
+                  </a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/location-tabs';
+</script>

@@ -1,0 +1,63 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+
+const settings = await getEntry('site-settings', 'main');
+if (!settings) throw new Error('site-settings/main entry is missing');
+
+const events = (await getCollection('upcoming-events')).sort(
+  (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
+);
+const nextEvent = events[0];
+
+const dateFormatter = new Intl.DateTimeFormat('en-GB', {
+  weekday: 'long',
+  day: 'numeric',
+  month: 'long',
+});
+---
+
+<section id="next-event">
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-lg-6">
+        <h2>Next Event</h2>
+        {nextEvent && <p>{dateFormatter.format(nextEvent.data.date)}.</p>}
+        <p>{settings.data.nextEventDescription}</p>
+        {
+          nextEvent?.data.bookingUrl && (
+            <a
+              class="btn-get-started"
+              href={nextEvent.data.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Book"
+            >
+              Book
+            </a>
+          )
+        }
+      </div>
+      <div class="col-lg-2">
+        <h3>Where</h3>
+        {nextEvent && <a href="#features">{nextEvent.data.location}</a>}
+      </div>
+      <div class="col-lg-2">
+        <h3>When</h3>
+        {
+          nextEvent && (
+            <p>
+              <br />
+              {dateFormatter.format(nextEvent.data.date)}
+              <br />
+              {nextEvent.data.time}
+            </p>
+          )
+        }
+      </div>
+      <div class="col-lg-2">
+        <h3>Full Calendar</h3>
+        <a class="scrollto" href="#features" title="All Events">See the full list of upcoming events</a>
+      </div>
+    </div>
+  </div>
+</section>

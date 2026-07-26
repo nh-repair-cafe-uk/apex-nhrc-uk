@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<section id="services" class="services section-bg">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Services</h2>
+      <p>Our Services</p>
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-delay="200">
+      {
+        services.map((service) => (
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class={service.data.icon} />
+              <h4>{service.data.title}</h4>
+              <p>{service.data.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

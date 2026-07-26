@@ -1,0 +1,62 @@
+---
+import { getEntry } from 'astro:content';
+
+const gallery = await getEntry('portfolio', 'gallery');
+if (!gallery) throw new Error('portfolio/gallery entry is missing');
+
+const filters: Array<{ label: string; filter: string }> = [
+  { label: 'All', filter: '*' },
+  { label: 'Odiham', filter: '.filter-event' },
+  { label: 'Hartley Wintney', filter: '.filter-hw' },
+  { label: 'Sherfield', filter: '.filter-s' },
+  { label: 'Sherfield Park', filter: '.filter-sherfield-park' },
+  { label: 'Silchester', filter: '.filter-sil' },
+  { label: 'Electricals', filter: '.filter-app' },
+  { label: 'Fabrics', filter: '.filter-fabric' },
+  { label: 'Other', filter: '.filter-web' },
+];
+---
+
+<section id="portfolio" class="portfolio">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Pictures</h2>
+      <p>Some of our recent activity</p>
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <ul id="portfolio-flters">
+          {
+            filters.map((filter, index) => (
+              <li data-filter={filter.filter} class={index === 0 ? 'filter-active' : undefined}>
+                {filter.label}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+      {
+        gallery.data.items.map((item) => (
+          <div class={`col-lg-4 col-md-6 portfolio-item ${item.categories.map((c) => `filter-${c}`).join(' ')}`}>
+            <img src={item.image} class="img-fluid" alt={item.title} loading="lazy" />
+            <div class="portfolio-info">
+              <h4>{item.title}</h4>
+              <p>{item.caption}</p>
+              <a href={item.image} class="preview-link" title={item.title} target="_blank" rel="noopener noreferrer">
+                <i class="bx bx-plus" />
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/portfolio-filter';
+</script>

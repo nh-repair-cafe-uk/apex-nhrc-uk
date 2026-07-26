@@ -1,0 +1,54 @@
+---
+import { getEntry } from 'astro:content';
+
+const settings = await getEntry('site-settings', 'main');
+if (!settings) throw new Error('site-settings/main entry is missing');
+const { heroSubtitle, paypalHostedButtonId } = settings.data;
+---
+
+<section id="hero">
+  <div class="hero-container" data-aos="fade-up" data-aos-delay="50">
+    <h1><br />North Hampshire <span style="font-family: 'Allerta Stencil', sans-serif;"> Repair Café</span></h1>
+    <h2>{heroSubtitle}</h2>
+    <h2>
+      <i class="bx bx-recycle" aria-hidden="true" style="color:green"></i> Repair
+      <i class="bx bx-recycle" aria-hidden="true" style="color:orange"></i> Reuse
+      <i class="bx bxs-heart" aria-hidden="true" style="color:red"></i> Relove
+    </h2>
+    <div class="d-flex">
+      <a href="#about" class="btn-get-started scrollto">Find out more</a>
+      <a
+        href="https://www.youtube.com/watch?v=gVjU1ydAUlQ"
+        class="btn-watch-video"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Repair Cafe Video"
+      >
+        <i class="bi bi-play-circle"></i><span>Watch Video</span>
+      </a>
+      <a
+        href="https://mmo.aiircdn.com/347/64bfa5648cb24.mp3"
+        class="btn-watch-video"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Derek on the radio"
+      >
+        <i class="bi bi-play-circle"></i><span>Listen to Derek</span>
+      </a>
+    </div>
+
+    <div class="hero-donate">
+      <p>Make a donation</p>
+      <form action="https://www.paypal.com/donate" method="post" target="_top">
+        <input type="hidden" name="hosted_button_id" value={paypalHostedButtonId} />
+        <input
+          type="image"
+          src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif"
+          name="submit"
+          title="PayPal - The safer, easier way to pay online!"
+          alt="Donate with PayPal"
+        />
+      </form>
+    </div>
+  </div>
+</section>

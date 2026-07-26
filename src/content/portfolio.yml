@@ -1,194 +1,194 @@
-id: gallery
-items:
-  - title: Team with Mayor
-    caption: Mayor visits team following the £50K customer savings milestone
-    image: /assets/img/portfolio/sherfield-photos/apr24/mayor-team.JPG
-    categories: [s]
-  - title: Cake for £50K milestone
-    caption: Right tool for the job
-    image: /assets/img/portfolio/sherfield-photos/apr24/Cake1.jpg
-    categories: [s]
-  - title: Chair
-    caption: New stretchers
-    image: /assets/img/portfolio/sherfield-photos/jan24/chair.jpg
-    categories: [s]
-  - title: Busy
-    caption: Busy day in Sherfield
-    image: /assets/img/portfolio/sherfield-photos/jan24/busy.jpg
-    categories: [s]
-  - title: Clock
-    caption: ""
-    image: /assets/img/portfolio/sherfield-photos/jan24/clock.jpg
-    categories: [s, web]
-  - title: Bench
-    caption: Renewed slats
-    image: /assets/img/portfolio/odiham-photos/bench.jpeg
-    categories: [web]
-  - title: Dancing Cactus
-    caption: Why?
-    image: /assets/img/portfolio/odiham-photos/cactus.jpeg
-    categories: [web]
-  - title: Kettle
-    caption: Testing the electrics
-    image: /assets/img/portfolio/odiham-photos/kettle.jpg
-    categories: [app]
-  - title: Lamp
-    caption: Lamp repair
-    image: /assets/img/portfolio/odiham-photos/light.jpeg
-    categories: [app]
-  - title: Welcome
-    caption: Welcome to the Odiham Repair Cafe
-    image: /assets/img/portfolio/odiham-photos/welcome.jpg
-    categories: [event]
-  - title: Team
-    caption: Team outside Odiham library
-    image: /assets/img/team2.jpg
-    categories: [event]
-  - title: Axe
-    caption: Fixing an axe handle
-    image: /assets/img/portfolio/odiham-photos/axe.jpg
-    categories: [web]
-  - title: Derek
-    caption: Our first cafe
-    image: /assets/img/portfolio/odiham-photos/derek.jpg
-    categories: [event]
-  - title: Dyson Vacuum Repair
-    caption: Sorted out clogged pipe
-    image: /assets/img/portfolio/hw/dyson.jpeg
-    categories: [hw, web]
-  - title: Happy customer
-    caption: Working again
-    image: /assets/img/portfolio/hw/happy-customer.jpg
-    categories: [hw, web]
-  - title: "MP, Ranil Jayawardena"
-    caption: Our local MP pops in to see the repair cafe in action
-    image: /assets/img/portfolio/hw/mp.jpeg
-    categories: [hw]
-  - title: Ranil & Derek
-    caption: Happy days
-    image: /assets/img/portfolio/hw/mp2.jpeg
-    categories: [hw]
-  - title: Old Lamp
-    caption: Interesting old lamp just requires a bit of TLC
-    image: "/assets/img/portfolio/hw/interesting lamp.jpeg"
-    categories: [hw, app]
-  - title: Clock
-    caption: Examining a clock
-    image: "/assets/img/portfolio/hw/james clock.jpg"
-    categories: [hw, web]
-  - title: Mixer
-    caption: Small handheld mixer
-    image: /assets/img/portfolio/hw/mixer.jpg
-    categories: [hw, app]
-  - title: CD Player
-    caption: CD Player needing a new drive belt
-    image: /assets/img/portfolio/hw/cd-player2.jpeg
-    categories: [hw, app]
-  - title: Team
-    caption: Volunteers at Sherfield
-    image: /assets/img/portfolio/sherfield-photos/sherfield-team.jpg
-    categories: [s]
-  - title: Reception
-    caption: A warm welcome awaits
-    image: /assets/img/portfolio/sherfield-photos/sherfield-reception.jpeg
-    categories: [s, app]
-  - title: Busy day
-    caption: Lots of people
-    image: /assets/img/portfolio/sherfield-photos/busy.jpeg
-    categories: [s, app]
-  - title: Clock
-    caption: Big clock but simple fix
-    image: /assets/img/portfolio/sherfield-photos/clock.jpeg
-    categories: [s]
-  - title: Various Lamps
-    caption: Rewiring required
-    image: /assets/img/portfolio/sherfield-park-photos/andrew-lights.jpg
-    categories: [sherfield-park]
-  - title: Stuffed Rabbit
-    caption: Just needs a bit of TLC and a lot of skilled needlework
-    image: /assets/img/portfolio/sherfield-photos/sheila-diana-rabbit.jpeg
-    categories: [s]
-  - title: Repairs are fun
-    caption: ""
-    image: /assets/img/portfolio/sherfield-park-photos/happy-customer.jpg
-    categories: [sherfield-park]
-  - title: Sharpening
-    caption: Getting a keen edge
-    image: /assets/img/portfolio/sherfield-park-photos/john-sharpening.jpg
-    categories: [sherfield-park]
-  - title: The Team
-    caption: Sherfield Park Repair Team
-    image: /assets/img/portfolio/sherfield-park-photos/team.jpg
-    categories: [sherfield-park]
-  - title: Busy day at Sherfield
-    caption: Sherfield coping with the rush
-    image: /assets/img/portfolio/sherfield-photos/november/busy-day-at-Sherfield.jpeg
-    categories: [s]
-  - title: Clock
-    caption: Clock missing teeth
-    image: /assets/img/portfolio/sherfield-photos/november/clock-james.jpeg
-    categories: [s, web]
-  - title: Mixer
-    caption: New part required
-    image: /assets/img/portfolio/sherfield-photos/november/saint-simon-sml.jpg
-    categories: [s, app]
-  - title: Reindeer and Sleigh
-    caption: Now working again
-    image: /assets/img/portfolio/sherfield-photos/november/santa-will-be-coming.jpeg
-    categories: [s, app]
-  - title: Statue
-    caption: Racing again
-    image: /assets/img/portfolio/sherfield-photos/november/statue-sml.jpg
-    categories: [s, web]
-  - title: Three of our latest Volunteers
-    caption: Hard at work (play)
-    image: /assets/img/portfolio/sherfield-photos/november/three-new-volunteers-heads-down.jpeg
-    categories: [s, web]
-  - title: Oil Filled radiator
-    caption: New parts, good to go
-    image: /assets/img/portfolio/sherfield-photos/november/working-heater-jonathan.jpeg
-    categories: [s, app]
-  - title: Till
-    caption: Florence happy (permission to include photo given)
-    image: /assets/img/portfolio/sherfield-photos/november/working-till-frank.jpeg
-    categories: [s, app]
-  - title: Team
-    caption: Team at Silchester
-    image: /assets/img/portfolio/silchester/team-silchester-sml.jpg
-    categories: [sil]
-  - title: Disco lighting
-    caption: Fitting new hall effect switch
-    image: /assets/img/portfolio/silchester/andrew-lighting.jpg
-    categories: [sil, web]
-  - title: Deputy Mayor Visiting
-    caption: Deputy Mayor and Mayoress
-    image: /assets/img/portfolio/silchester/deputy-mayor.jpg
-    categories: [sil, web]
-  - title: Busy Day in Hartley Wintney
-    caption: ""
-    image: /assets/img/portfolio/hw/hw/busy.jpg
-    categories: [hw, web]
-  - title: Simon fixing child cage
-    caption: Clothes airer
-    image: /assets/img/portfolio/hw/hw/child-control.jpg
-    categories: [hw, app]
-  - title: Larger Item
-    caption: Gramaphone cabinet
-    image: /assets/img/portfolio/hw/hw/diving-into-an-old-gramaphone.jpg
-    categories: [hw, app]
-  - title: Angel
-    caption: Rewelded broken angel for happy customer
-    image: /assets/img/portfolio/hw/angel-sml.jpg
-    categories: [hw, app]
-  - title: MP Visit
-    caption: Local MP Alex Brewer visiting
-    image: /assets/img/portfolio/hw/mp-alex-brewer.jpeg
-    categories: [hw, app]
-  - title: Pinball
-    caption: Pinball game under investigation
-    image: /assets/img/portfolio/hw/pinball-wizard.jpeg
-    categories: [hw, app]
-  - title: Team
-    caption: Team at Hartley Wintney
-    image: /assets/img/portfolio/hw/team.jpeg
-    categories: [hw, app]
+gallery:
+  items:
+    - title: Team with Mayor
+      caption: Mayor visits team following the £50K customer savings milestone
+      image: /assets/img/portfolio/sherfield-photos/apr24/mayor-team.JPG
+      categories: [s]
+    - title: Cake for £50K milestone
+      caption: Right tool for the job
+      image: /assets/img/portfolio/sherfield-photos/apr24/Cake1.jpg
+      categories: [s]
+    - title: Chair
+      caption: New stretchers
+      image: /assets/img/portfolio/sherfield-photos/jan24/chair.jpg
+      categories: [s]
+    - title: Busy
+      caption: Busy day in Sherfield
+      image: /assets/img/portfolio/sherfield-photos/jan24/busy.jpg
+      categories: [s]
+    - title: Clock
+      caption: ""
+      image: /assets/img/portfolio/sherfield-photos/jan24/clock.jpg
+      categories: [s, web]
+    - title: Bench
+      caption: Renewed slats
+      image: /assets/img/portfolio/odiham-photos/bench.jpeg
+      categories: [web]
+    - title: Dancing Cactus
+      caption: Why?
+      image: /assets/img/portfolio/odiham-photos/cactus.jpeg
+      categories: [web]
+    - title: Kettle
+      caption: Testing the electrics
+      image: /assets/img/portfolio/odiham-photos/kettle.jpg
+      categories: [app]
+    - title: Lamp
+      caption: Lamp repair
+      image: /assets/img/portfolio/odiham-photos/light.jpeg
+      categories: [app]
+    - title: Welcome
+      caption: Welcome to the Odiham Repair Cafe
+      image: /assets/img/portfolio/odiham-photos/welcome.jpg
+      categories: [event]
+    - title: Team
+      caption: Team outside Odiham library
+      image: /assets/img/team2.jpg
+      categories: [event]
+    - title: Axe
+      caption: Fixing an axe handle
+      image: /assets/img/portfolio/odiham-photos/axe.jpg
+      categories: [web]
+    - title: Derek
+      caption: Our first cafe
+      image: /assets/img/portfolio/odiham-photos/derek.jpg
+      categories: [event]
+    - title: Dyson Vacuum Repair
+      caption: Sorted out clogged pipe
+      image: /assets/img/portfolio/hw/dyson.jpeg
+      categories: [hw, web]
+    - title: Happy customer
+      caption: Working again
+      image: /assets/img/portfolio/hw/happy-customer.jpg
+      categories: [hw, web]
+    - title: "MP, Ranil Jayawardena"
+      caption: Our local MP pops in to see the repair cafe in action
+      image: /assets/img/portfolio/hw/mp.jpeg
+      categories: [hw]
+    - title: Ranil & Derek
+      caption: Happy days
+      image: /assets/img/portfolio/hw/mp2.jpeg
+      categories: [hw]
+    - title: Old Lamp
+      caption: Interesting old lamp just requires a bit of TLC
+      image: "/assets/img/portfolio/hw/interesting lamp.jpeg"
+      categories: [hw, app]
+    - title: Clock
+      caption: Examining a clock
+      image: "/assets/img/portfolio/hw/james clock.jpg"
+      categories: [hw, web]
+    - title: Mixer
+      caption: Small handheld mixer
+      image: /assets/img/portfolio/hw/mixer.jpg
+      categories: [hw, app]
+    - title: CD Player
+      caption: CD Player needing a new drive belt
+      image: /assets/img/portfolio/hw/cd-player2.jpeg
+      categories: [hw, app]
+    - title: Team
+      caption: Volunteers at Sherfield
+      image: /assets/img/portfolio/sherfield-photos/sherfield-team.jpg
+      categories: [s]
+    - title: Reception
+      caption: A warm welcome awaits
+      image: /assets/img/portfolio/sherfield-photos/sherfield-reception.jpeg
+      categories: [s, app]
+    - title: Busy day
+      caption: Lots of people
+      image: /assets/img/portfolio/sherfield-photos/busy.jpeg
+      categories: [s, app]
+    - title: Clock
+      caption: Big clock but simple fix
+      image: /assets/img/portfolio/sherfield-photos/clock.jpeg
+      categories: [s]
+    - title: Various Lamps
+      caption: Rewiring required
+      image: /assets/img/portfolio/sherfield-park-photos/andrew-lights.jpg
+      categories: [sherfield-park]
+    - title: Stuffed Rabbit
+      caption: Just needs a bit of TLC and a lot of skilled needlework
+      image: /assets/img/portfolio/sherfield-photos/sheila-diana-rabbit.jpeg
+      categories: [s]
+    - title: Repairs are fun
+      caption: ""
+      image: /assets/img/portfolio/sherfield-park-photos/happy-customer.jpg
+      categories: [sherfield-park]
+    - title: Sharpening
+      caption: Getting a keen edge
+      image: /assets/img/portfolio/sherfield-park-photos/john-sharpening.jpg
+      categories: [sherfield-park]
+    - title: The Team
+      caption: Sherfield Park Repair Team
+      image: /assets/img/portfolio/sherfield-park-photos/team.jpg
+      categories: [sherfield-park]
+    - title: Busy day at Sherfield
+      caption: Sherfield coping with the rush
+      image: /assets/img/portfolio/sherfield-photos/november/busy-day-at-Sherfield.jpeg
+      categories: [s]
+    - title: Clock
+      caption: Clock missing teeth
+      image: /assets/img/portfolio/sherfield-photos/november/clock-james.jpeg
+      categories: [s, web]
+    - title: Mixer
+      caption: New part required
+      image: /assets/img/portfolio/sherfield-photos/november/saint-simon-sml.jpg
+      categories: [s, app]
+    - title: Reindeer and Sleigh
+      caption: Now working again
+      image: /assets/img/portfolio/sherfield-photos/november/santa-will-be-coming.jpeg
+      categories: [s, app]
+    - title: Statue
+      caption: Racing again
+      image: /assets/img/portfolio/sherfield-photos/november/statue-sml.jpg
+      categories: [s, web]
+    - title: Three of our latest Volunteers
+      caption: Hard at work (play)
+      image: /assets/img/portfolio/sherfield-photos/november/three-new-volunteers-heads-down.jpeg
+      categories: [s, web]
+    - title: Oil Filled radiator
+      caption: New parts, good to go
+      image: /assets/img/portfolio/sherfield-photos/november/working-heater-jonathan.jpeg
+      categories: [s, app]
+    - title: Till
+      caption: Florence happy (permission to include photo given)
+      image: /assets/img/portfolio/sherfield-photos/november/working-till-frank.jpeg
+      categories: [s, app]
+    - title: Team
+      caption: Team at Silchester
+      image: /assets/img/portfolio/silchester/team-silchester-sml.jpg
+      categories: [sil]
+    - title: Disco lighting
+      caption: Fitting new hall effect switch
+      image: /assets/img/portfolio/silchester/andrew-lighting.jpg
+      categories: [sil, web]
+    - title: Deputy Mayor Visiting
+      caption: Deputy Mayor and Mayoress
+      image: /assets/img/portfolio/silchester/deputy-mayor.jpg
+      categories: [sil, web]
+    - title: Busy Day in Hartley Wintney
+      caption: ""
+      image: /assets/img/portfolio/hw/hw/busy.jpg
+      categories: [hw, web]
+    - title: Simon fixing child cage
+      caption: Clothes airer
+      image: /assets/img/portfolio/hw/hw/child-control.jpg
+      categories: [hw, app]
+    - title: Larger Item
+      caption: Gramaphone cabinet
+      image: /assets/img/portfolio/hw/hw/diving-into-an-old-gramaphone.jpg
+      categories: [hw, app]
+    - title: Angel
+      caption: Rewelded broken angel for happy customer
+      image: /assets/img/portfolio/hw/angel-sml.jpg
+      categories: [hw, app]
+    - title: MP Visit
+      caption: Local MP Alex Brewer visiting
+      image: /assets/img/portfolio/hw/mp-alex-brewer.jpeg
+      categories: [hw, app]
+    - title: Pinball
+      caption: Pinball game under investigation
+      image: /assets/img/portfolio/hw/pinball-wizard.jpeg
+      categories: [hw, app]
+    - title: Team
+      caption: Team at Hartley Wintney
+      image: /assets/img/portfolio/hw/team.jpeg
+      categories: [hw, app]

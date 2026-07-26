@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import VolunteerModal from './VolunteerModal.astro';
+
+const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<section id="team" class="team section-bg">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Team</h2>
+      <p>Check out our Team. You may see others on the day!</p>
+    </div>
+
+    <div class="row">
+      {
+        team.map((member) => (
+          <div class="col-lg-3 col-md-4">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="pic">
+                <img src={member.data.image} class="img-fluid rounded" alt={member.data.name} loading="lazy" />
+              </div>
+              <div class="member-info">
+                <h4>{member.data.name}</h4>
+                <span>{member.data.role}</span>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+
+      <div class="col-lg-3 col-md-4">
+        <div class="member" data-aos="fade-up" data-aos-delay="100">
+          <div class="pic">
+            <img src="/assets/img/team/blank1.png" class="img-fluid rounded" alt="New Person" loading="lazy" />
+          </div>
+          <div class="member-info">
+            <h4>This could be you</h4>
+            <span>We're looking for more volunteers. Have a chat to find out more.</span>
+            <div class="social">
+              <button id="volunteer-modal-open" type="button" aria-haspopup="dialog" aria-expanded="false">
+                Why Volunteer?
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<VolunteerModal />
+
+<script>
+  import '../scripts/volunteer-modal';
+</script>

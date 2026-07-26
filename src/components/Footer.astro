@@ -1,0 +1,59 @@
+---
+import { getEntry } from 'astro:content';
+
+const settings = await getEntry('site-settings', 'main');
+if (!settings) throw new Error('site-settings/main entry is missing');
+const { contactEmail, facebookUrl, instagramUrl } = settings.data;
+---
+
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-info">
+            <h3>North Hampshire Repair Café</h3>
+            <p><strong>Email:</strong> {contactEmail}<br /></p>
+            <div class="social-links mt-3">
+              <a href={facebookUrl} class="facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
+                <i class="bx bxl-facebook"></i>
+              </a>
+              <a href={instagramUrl} class="instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
+                <i class="bx bxl-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#features">Events</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/assets/NHRCHouseRules.pdf" target="_blank" rel="noopener noreferrer">House Rules (Please Read)</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/assets/privacy.pdf" target="_blank" rel="noopener noreferrer">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 footer-newsletter">
+          <p>Repair Cafe's around the area. Click for larger map</p>
+          <a
+            href="https://www.google.com/maps/d/edit?mid=1of11KA7FWJgDtv9Cpy-rzKaoqSsXGII&usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Larger map of local Repair Cafe's"
+          >
+            <img src="/assets/img/repaircafesnearby.jpg" loading="lazy" alt="Nearby repair cafe's" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong><span>North Hampshire Repair Café</span></strong>. All Rights Reserved
+    </div>
+  </div>
+</footer>
